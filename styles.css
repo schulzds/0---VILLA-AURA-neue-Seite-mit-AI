@@ -1058,4 +1058,302 @@ padding: 40px 24px 220px;
   .topbar__logo img{
     height: 32px;
   }
+}@media (max-width: 768px){
+
+  .topbar{
+    padding: 0;
+  }
+
+  .topbar__inner{
+    min-height: 66px;
+    padding: 8px 18px;
+  }
+
+  .topbar__logo img{
+    height: 42px;
+  }
+
+  .burger{
+    width: 104px;
+    height: 50px;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #111;
+  }
+
+  .burger::after{
+    content: "Menü";
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .burger span{
+    display: none;
+  }
+
+  .hero--full{
+    min-height: calc(100svh - 66px);
+  }
+
+  .hero__bg{
+    background-position: center center;
+  }
+
+  .hero__overlay{
+    padding: 0 24px 115px;
+  }
+
+  .hero__title{
+    font-size: clamp(4rem, 15vw, 5.8rem);
+    line-height: 0.88;
+  }
+}/* =========================
+   MOBILE MENU – FLOATING PANEL
+   ========================= */
+
+@media (max-width: 768px){
+
+  /* Topbar */
+  .topbar{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(12px);
+  }
+
+  .topbar__inner{
+    padding: 14px 18px;
+  }
+
+  /* Menübutton */
+  ..burger{
+  width: 124px;
+  height: 72px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #111;
+
+  border: 1px solid rgba(255,255,255,0.45);
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Floating Menu */
+  .mobile{
+    position: fixed;
+
+    top: 96px;
+    right: 18px;
+
+    width: 280px;
+
+    z-index: 9998;
+
+    background: rgba(255,255,255,0.58);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.28);
+
+    border-radius: 30px;
+
+    box-shadow:
+      0 18px 50px rgba(0,0,0,0.16);
+
+    overflow: hidden;
+  }
+
+  /* Inhalt */
+  .mobile__inner{
+    display: flex;
+    flex-direction: column;
+
+    padding: 22px 24px;
+    gap: 4px;
+  }
+
+  /* Links */
+  .mobile__inner a{
+    font-size: 1.22rem;
+    font-weight: 600;
+
+    color: #111;
+
+    padding: 14px 4px;
+
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    transition:
+      transform .18s ease,
+      opacity .18s ease;
+  }
+
+  .mobile__inner a:hover{
+    transform: translateX(4px);
+    opacity: 0.72;
+  }
+
+  .mobile__inner a:last-of-type{
+    border-bottom: none;
+  }
+
+  /* Book now */
+.mobile__inner .btn{
+  margin-top: 16px;
+
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border-radius: 999px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: rgba(255,255,255,0.34);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #111;
+
+  border: 1px solid rgba(255,255,255,0.55);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.06);
+}
+}/* =========================
+   FINAL OVERRIDE: mobile menu button glass
+   ========================= */
+
+@media (max-width: 768px){
+
+  .topbar .burger{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 132px !important;
+    height: 64px !important;
+    border-radius: 999px !important;
+
+    background: rgba(255,255,255,0.34) !important;
+    color: #111 !important;
+
+    border: 1px solid rgba(255,255,255,0.55) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .topbar .burger::after{
+    content: "Menü" !important;
+    color: #111 !important;
+  }
+
+  .topbar .burger span{
+    display: none !important;
+  }
+}/* =========================
+   MOBILE HERO WIDTH FIX
+   ========================= */
+
+@media (max-width: 768px){
+  .hero{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero__bg{
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}/* =========================
+   FINAL MOBILE MENU OVERLAY FIX
+   ========================= */
+
+@media (max-width: 980px){
+
+  .mobile{
+    position: fixed !important;
+    top: 76px !important;
+    right: 18px !important;
+    left: auto !important;
+
+    width: min(300px, calc(100vw - 36px)) !important;
+    z-index: 99999 !important;
+
+    background: rgba(255,255,255,0.48) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.12) !important;
+
+    overflow: hidden !important;
+  }
+
+  .mobile[hidden]{
+    display: none !important;
+  }
+
+  .mobile:not([hidden]){
+    display: block !important;
+  }
+
+  .mobile__inner{
+    display: flex !important;
+    flex-direction: column !important;
+
+    padding: 22px 24px 24px !important;
+    gap: 6px !important;
+  }
+
+  .mobile__inner a{
+    font-size: 1.18rem !important;
+    font-weight: 600 !important;
+    color: #111 !important;
+
+    padding: 11px 4px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  }
+
+  .mobile__inner .btn{
+    margin-top: 14px !important;
+
+    background: rgba(255,255,255,0.34) !important;
+    color: #111 !important;
+
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
 }
