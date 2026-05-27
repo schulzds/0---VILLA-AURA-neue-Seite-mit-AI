@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reviews – Villa Aura Naxos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="topbar__logo" href="index.html" aria-label="Villa Aura home">
+      <img src="assets/img/logo-mark.png" alt="Villa Aura logo">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html" class="is-active">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn btn--small"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </nav>
+
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="container mobile__inner">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="reviews">
+    <div class="container">
+      <p class="kicker">Reviews</p>
+      <h2>We are amazed. Our guests too.</h2>
+
+      <div class="reviews__grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>Villa Aura Naxos</strong>
+      <p class="small">Boutique Luxury Seaside Living</p>
+      <p class="small">© <span id="year"></span> Villa Aura Naxos</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Global JS (Burger etc.) -->
+<script src="script.js"></script>
+
+<!-- Reviews Loader + Lightbox (eingebaut, sauber, nicht abgeschnitten) -->
+<script>
+  (function () {
+    const grid = document.getElementById('reviewsGrid');
+    if (!grid) return;
+
+    const TOTAL_REVIEWS = 26;
+
+    for (let i = 1; i <= TOTAL_REVIEWS; i++) {
+      const src = `assets/img/review${i}.jpg`;
+
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'reviewcard';
+      card.setAttribute('aria-label', `Open review ${i}`);
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Guest review ${i} – Villa Aura`;
+      img.loading = 'lazy';
+
+      card.appendChild(img);
+      grid.appendChild(card);
+    }
+
+    // Overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'rlx';
+    overlay.innerHTML = `
+      <button class="rlx__close" type="button" aria-label="Close">×</button>
+      <div class="rlx__inner" role="dialog" aria-modal="true">
+        <img class="rlx__img" alt="">
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    const bigImg = overlay.querySelector('.rlx__img');
+    const closeBtn = overlay.querySelector('.rlx__close');
+
+    function openLightbox(src, alt) {
+      bigImg.src = src;
+      bigImg.alt = alt || '';
+      overlay.classList.add('is-open');
+      document.documentElement.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.documentElement.style.overflow = '';
+      setTimeout(() => { bigImg.src = ''; }, 200);
+    }
+
+    // Click on card -> open
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.reviewcard');
+      if (!card) return;
+      const img = card.querySelector('img');
+      if (!img) return;
+      openLightbox(img.src, img.alt);
+    });
+
+    // Click outside / X closes
+    overlay.addEventListener('click', (e) => {
+      const inner = e.target.closest('.rlx__inner');
+      if (!inner) closeLightbox();
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // ESC closes
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+</script>
+
+</body>
+</html>

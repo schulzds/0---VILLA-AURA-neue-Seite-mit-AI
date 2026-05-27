@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villa Aura – The Villa</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <!-- Logo / Home -->
+    <a class="topbar__logo" href="index.html" aria-label="Villa Aura home">
+      <img src="assets/img/logo-mark.png" alt="Villa Aura logo">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="villa.html" class="is-active">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn btn--small"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </nav>
+
+    <!-- Burger -->
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="container mobile__inner">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero hero--compact">
+  <div class="hero__bg hero__bg--villa" aria-label="Villa Aura hero image"></div>
+
+  <div class="hero__overlay">
+    <h1 class="hero__title hero__title--small">
+      <span>The Villa</span>
+    </h1>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="section" id="villa">
+  <div class="container">
+
+    <div class="villa__grid">
+
+      <!-- Text -->
+      <div class="villa__text">
+        <p class="kicker">The Villa</p>
+        <h2>Designed for calm island living.</h2>
+
+        <p>
+          Surrounded by the most beautiful beaches on the west coast of Naxos,
+          Villa Aura is located in the idyllic village of Kastraki, just 60 meters
+          from the long white sandy beach and away from the tourist hotspots.
+        </p>
+
+        <p>
+          Newly built in 2023, Villa Aura combines the clean, modern style of the Cyclades
+          with the highest level of comfort. It has three bright bedrooms with comfortable beds,
+          two elegant bathrooms with rain showers, a spacious living room with dining area, and
+          an open-plan, fully equipped designer kitchen. Thanks to three large pergolas, you can
+          find shade and relaxation at any time of day. Private parking, fast Starlink internet,
+          and a Weber grill are also at your disposal.
+          The house is ideal for families or groups of up to six people.
+        </p>
+
+        <p>
+          The spacious outdoor area is a true oasis: a well-tended garden with over two hundred
+          Mediterranean plants and herbs, which you are welcome to harvest, surrounds the house.
+          From here, you can enjoy an unobstructed view of the sea and the island of Paros – an
+          unforgettable experience, especially at sunset. The large sun terrace offers plenty of
+          space for relaxing and dining outdoors, while the 32-square-meter pool with a massage
+          jet provides refreshment and is cleaned twice a week by professional staff. Next to the
+          pool is a spacious outdoor shower, and the covered dining area can seat up to ten people.
+          The two terraces on the upper floor, one of which is fully covered and sheltered from the
+          wind, feature a cozy seating area with panoramic sea views, inviting you to relax.
+          Also on the upper floor is the spacious master bedroom with a large panoramic window and
+          sea view. As the sun sinks into the sea, the sky above Villa Aura transforms into a
+          sparkling sea of millions of stars - a moment you will never forget.
+        </p>
+
+        <p>
+          A small sandy path leads directly from the house to Kastraki beach, which is only 60 meters
+          away. The fine, light-colored sand and shallow, crystal-clear blue water make it ideal for
+          children. Here you can swim, build sandcastles, or simply enjoy the gentle sound of the Aegean
+          Sea. There are several traditional taverns within walking distance, and bakeries and supermarkets
+          are just a few minutes away by car. The famous beaches of Alyko and Hawaii Beach are
+          about ten minutes away, and the town of Naxos can be reached in around 20 to 25 minutes.
+          The “Ride with the Gods” surf station, which offers kite and surf lessons, is only about a
+          ten-minute walk on the beach away.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="villa__image">
+        <img src="assets/img/view.jpg" alt="Villa Aura Naxos exterior view">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>Villa Aura Naxos</strong>
+      <p class="small">Boutique Luxury Seaside Living</p>
+      <p class="small">© <span id="year"></span> Villa Aura Naxos</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
+

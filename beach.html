@@ -1,0 +1,128 @@
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Our Beach – Villa Aura Naxos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="topbar__logo" href="index.html" aria-label="Villa Aura home">
+      <img src="assets/img/logo-mark.png" alt="Villa Aura logo">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html" class="is-active">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn btn--small"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </nav>
+
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="container mobile__inner">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="beach">
+    <div class="container">
+
+      <p class="kicker">Our Beach</p>
+      <h2>White sand. Clear water. Endless space.</h2>
+
+      <!-- Beach Gallery -->
+      <div class="gallery" id="beachGrid"></div>
+
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>Villa Aura Naxos</strong>
+      <p class="small">Boutique Luxury Seaside Living</p>
+      <p class="small">© <span id="year"></span> Villa Aura Naxos</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="script.js"></script>
+
+<!-- Beach Gallery Loader -->
+<script>
+  (function () {
+    const grid = document.getElementById('beachGrid');
+    if (!grid) return;
+
+    const TOTAL_IMAGES = 17;
+
+    for (let i = 1; i <= TOTAL_IMAGES; i++) {
+      const src = `assets/img/beach${i}.jpg`;
+
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'gitem';
+      item.setAttribute('aria-label', `Open beach photo ${i}`);
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Beach near Villa Aura – photo ${i}`;
+      img.loading = 'lazy';
+
+      item.appendChild(img);
+      grid.appendChild(item);
+    }
+  })();
+</script>
+
+</body>
+</html>

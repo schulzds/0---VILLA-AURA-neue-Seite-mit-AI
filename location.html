@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Location – Villa Aura Naxos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <!-- Logo / Home -->
+    <a class="topbar__logo" href="index.html" aria-label="Villa Aura home">
+      <img src="assets/img/logo-mark.png" alt="Villa Aura logo">
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html" class="is-active">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn btn--small"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </nav>
+
+    <!-- Burger -->
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="container mobile__inner">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- LOCATION -->
+  <section class="section" id="location">
+    <div class="container">
+
+      <!-- Standard-Header (wie auf den anderen Seiten) -->
+      <p class="kicker">Location</p>
+      <h2>How to find your holiday home</h2>
+
+      <div class="location__grid">
+
+        <!-- LEFT: TEXT -->
+        <div class="location__text">
+          <p>
+            Villa Aura is located in Kastraki on the west coast of Naxos — a quiet,
+            spacious coastline known for long sandy beaches, crystal-clear water and breathtaking sunsets.
+          </p>
+
+          <p>
+            The beach is only a short walk away, while charming tavernas, cafés and small local spots are within easy reach.
+            For groceries and daily essentials, you'll find supermarkets and bakeries just a few minutes by car.
+          </p>
+
+          <p>
+            Naxos offers the perfect balance of authentic island life and comfort: traditional villages, mountain views,
+            hidden coves and a relaxed atmosphere — without feeling remote.
+          </p>
+
+          <div class="location__facts">
+            <div class="fact">
+              <div class="fact__label">Beach</div>
+              <div class="fact__value">~60 m</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact__label">Alyko &amp; Hawaii Beach</div>
+              <div class="fact__value">~10 min drive</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact__label">Nearest shops</div>
+              <div class="fact__value">~5 min drive</div>
+            </div>
+
+            <div class="fact">
+              <div class="fact__label">Naxos Town / Port</div>
+              <div class="fact__value">~20–25 min</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: MAP + PHOTO -->
+        <div class="location__media">
+
+          <div class="location__map">
+            <iframe
+              src="https://www.google.com/maps?q=37.010534,25.384315&z=19&maptype=satellite&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="location__photo">
+            <img src="assets/img/distance.jpg" alt="Villa Aura location overview">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>Villa Aura Naxos</strong>
+      <p class="small">Boutique Luxury Seaside Living</p>
+      <p class="small">© <span id="year"></span> Villa Aura Naxos</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

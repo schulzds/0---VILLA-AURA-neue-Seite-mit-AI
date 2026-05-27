@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy – Villa Aura Naxos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="topbar__logo" href="index.html" aria-label="Villa Aura home">
+      <img src="assets/img/logo-mark.png" alt="Villa Aura logo">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn btn--small"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </nav>
+
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="container mobile__inner">
+      <a href="index.html">Home</a>
+      <a href="villa.html">Villa Aura</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="location.html">Location</a>
+      <a href="beach.html">Our Beach</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hosts.html">Your Hosts</a>
+
+      <a class="btn"
+         href="https://www.blendinblue.com/villa-aura"
+         target="_blank"
+         rel="noopener">
+        Book now
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="privacy">
+    <div class="container" style="max-width: 760px;">
+
+      <p class="kicker">Legal</p>
+      <h2>Privacy Policy</h2>
+
+      <p>
+        We take the protection of your personal data very seriously. This website is a private,
+        informational website and does not collect personal data through forms or user accounts.
+      </p>
+
+      <p>
+        <strong>1. Controller</strong><br>
+        Villa Aura Naxos<br>
+        Dr. Svenja und Daniel Schulz<br>
+        Oberdillerstr. 27b<br>
+        82065 Baierbrunn<br>
+        Germany<br>
+        Email: <a href="mailto:schulzds@googlemail.com">schulzds@googlemail.com</a>
+      </p>
+
+      <p>
+        <strong>2. Access data / server log files</strong><br>
+        When visiting this website, the hosting provider automatically collects information
+        transmitted by your browser. This may include IP address, browser type, operating system,
+        date and time of access. These data are technically necessary to display the website and
+        ensure stability and security.
+      </p>
+
+      <p>
+        <strong>3. External services</strong><br>
+        This website uses Google Maps to display the location of Villa Aura. When loading the map,
+        your IP address may be transmitted to Google. The provider of this service is Google Ireland
+        Limited, Gordon House, Barrow Street, Dublin 4, Ireland.
+      </p>
+
+      <p>
+        <strong>4. Cookies</strong><br>
+        This website does not use cookies for tracking, analytics or marketing purposes.
+      </p>
+
+      <p>
+        <strong>5. Your rights</strong><br>
+        You have the right to request information about your stored personal data, its origin and
+        recipients, as well as the purpose of data processing. You also have the right to request
+        correction or deletion of this data where legally permissible.
+      </p>
+
+      <p>
+        <strong>6. Changes to this policy</strong><br>
+        We reserve the right to update this privacy policy to comply with legal requirements or to
+        reflect changes to the website.
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>Villa Aura Naxos</strong>
+      <p class="small">Boutique Luxury Seaside Living</p>
+      <p class="small">© <span id="year"></span> Villa Aura Naxos</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

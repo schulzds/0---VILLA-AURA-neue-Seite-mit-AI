@@ -1,0 +1,1061 @@
+/* =========================
+   Villa Aura – Minimal Luxury
+   ========================= */
+
+/* ---------- Base ---------- */
+:root{
+  --bg: #ffffff;
+  --ink: #141414;
+  --muted: #6b6b6b;
+  --line: rgba(20,20,20,0.10);
+  --panel: #f6f6f6;
+  --shadow: 0 18px 50px rgba(0,0,0,0.10);
+  --radius: 18px;
+  --radius-lg: 26px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+p{ margin:0 0 14px; }
+h1,h2,h3{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  line-height:1.15;
+  margin:0 0 14px;
+}
+h1{ font-size:clamp(2.3rem, 4.8vw, 4.0rem); letter-spacing:-0.02em; }
+h2{ font-size:clamp(1.8rem, 3.2vw, 2.6rem); letter-spacing:-0.01em; }
+h3{ font-size:1.25rem; }
+
+.container{
+  max-width:none;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.section{ padding: 92px 0; }
+.section--tight{ padding: 64px 0; }
+.muted{ color:var(--muted); }
+.kicker{
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  font-size:0.78rem;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 26px;
+  border-radius:999px;
+  background:var(--ink);
+  color:#fff;
+  font-weight:500;
+  border:1px solid var(--ink);
+  transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{ transform:translateY(-1px); background:#000; border-color:#000; }
+.btn--ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--line);
+}
+.btn--ghost:hover{ background:rgba(0,0,0,0.04); border-color:rgba(0,0,0,0.2); }
+.btn--small{ padding:10px 16px; font-size:0.95rem; }
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:saturate(180%) blur(12px);
+  background:rgba(255,255,255,0.82);
+  border-bottom:1px solid var(--line);
+}
+.topbar__inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Navigation + Book now rechts */
+  gap: 24px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand__mark{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  font-family:'Fraunces', serif;
+}
+.brand__name{ font-weight:600; display:block; }
+.brand__tag{ display:block; font-size:0.88rem; color:var(--muted); margin-top:2px; }
+.nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.nav a{
+  font-size:0.98rem;
+  color:rgba(20,20,20,0.85);
+}
+.nav a:hover{ color:#000; }
+
+.burger{
+  display:none;
+  background:transparent;
+  border:0;
+  width:44px; height:44px;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+.burger span{
+  display:block;
+  width:18px;
+  height:2px;
+  background:var(--ink);
+  margin:4px auto;
+  border-radius:999px;
+}
+.mobile{
+  border-top:1px solid var(--line);
+}
+.mobile__inner{
+  display:grid;
+  gap:12px;
+  padding:18px 24px 22px;
+}
+.mobile__inner a{ padding:10px 0; }
+
+/* ---------- Hero ---------- */
+/* ---------- Hero (full-bleed) ---------- */
+.hero--full{
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  display: grid;
+  align-items: end;
+}
+
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.22) 100%),
+    url("assets/img/hero.jpg") center/cover no-repeat;
+  transform: scale(1.01);
+}
+
+.hero__overlay{
+  position: relative;
+padding: 40px 24px 220px;
+  max-width: 1200px;
+  color: #fff;
+}
+ 
+
+.hero__sub{
+  max-width: 52ch;
+  color: rgba(10,10,10,0.78);
+  font-size: 1.05rem;
+}
+
+.hero__cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.pill{
+  background:rgba(255,255,255,0.88);
+  border:1px solid rgba(255,255,255,0.55);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:0.92rem;
+  color:#000;
+}
+
+/* ---------- Cards / Grid ---------- */
+.grid{
+  display:grid;
+  gap:20px;
+}
+.grid--2{ grid-template-columns: 1fr 1fr; }
+.grid--3{ grid-template-columns: repeat(3, 1fr); }
+
+.card{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:22px;
+  background:#fff;
+}
+.card--soft{
+  background:var(--panel);
+  border-color: transparent;
+}
+.hr{
+  height:1px;
+  background:var(--line);
+  margin:24px 0;
+}
+
+/* ---------- Feature list ---------- */
+.features{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+  display:grid;
+  gap:10px;
+}
+.features li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:rgba(20,20,20,0.88);
+}
+.dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:rgba(20,20,20,0.65);
+  margin-top:9px;
+  flex:0 0 8px;
+}
+
+/* ---------- Gallery ---------- */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin-top: 22px;
+}
+
+.gitem{
+  border-radius: 18px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+  position:relative;
+  aspect-ratio: 4 / 3;      /* sorgt für gleichmäßige Kacheln */
+}
+
+.gitem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform .25s ease;
+}
+
+.gitem:hover img{ transform:scale(1.03); }
+
+.gitem::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.10));
+  pointer-events:none;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .gallery{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+}
+@media (max-width: 640px){
+  .gallery{ grid-template-columns: 1fr; }
+}
+
+
+/* ---------- Lightbox ---------- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.82);
+  display:grid;
+  place-items:center;
+  padding:24px;
+  z-index:100;
+}
+.lightbox[hidden]{ display:none; }
+.lightbox__img{
+  max-width:min(1100px, 94vw);
+  max-height: 86vh;
+  border-radius: 16px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+}
+.lightbox__close{
+  position:fixed;
+  top:18px; right:18px;
+  width:44px; height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+.lightbox__close:hover{ background: rgba(255,255,255,0.16); }
+
+/* ---------- Map ---------- */
+.map{
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow: 0 14px 46px rgba(0,0,0,0.08);
+}
+.map iframe{
+  width:100%;
+  height:420px;
+  border:0;
+}
+
+/* ---------- Footer ---------- */
+.footer{
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  color:rgba(20,20,20,0.85);
+}
+.footer__grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:20px;
+  align-items:start;
+}
+.footer a{ color:rgba(20,20,20,0.85); }
+.footer a:hover{ color:#000; text-decoration:underline; }
+.small{ font-size:0.92rem; color:var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .nav{ display:none; }
+  .burger{ display:block; }
+  .hero__grid{ grid-template-columns: 1fr; }
+  .hero__media{ min-height: 440px; }
+  .grid--3{ grid-template-columns: 1fr; }
+  .grid--2{ grid-template-columns: 1fr; }
+  .g1{ grid-column: span 12; min-height: 320px; }
+  .g2,.g3,.g4,.g5,.g6{ grid-column: span 6; }
+}
+@media (max-width: 640px){
+  .section{ padding: 72px 0; }
+  .g2,.g3,.g4,.g5,.g6{ grid-column: span 12; min-height: 220px; }
+  .map iframe{ height: 360px; }
+}
+/* Make first 2 images larger for a curated feel */
+.gallery .gitem:nth-child(1){
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+.gallery .gitem:nth-child(2){
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 980px){
+  .gallery .gitem:nth-child(1){
+    grid-column: span 2;
+  }
+}
+@media (max-width: 640px){
+  .gallery .gitem:nth-child(1){
+    grid-column: span 1;
+  }
+}
+/* Fix: Booking button text sichtbar machen */
+.topbar .btn{
+  font-size: 0.9rem;
+  color: #fff;
+  text-indent: 0;
+}
+/* === HERO HEADLINE: stacked, left, Agapui-style === */
+.hero__overlay{
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.footer__links{
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+/* HERO TITLE – sicher groß auf großen Screens */
+.hero__title{
+  margin: 0;
+  display: block;
+  text-align: left;
+
+  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+
+  /* Standard: gut auf Laptop */
+  font-size: clamp(3.6rem, 6.2vw, 7.4rem);
+
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.hero__title span{
+  display: block;
+}
+
+/* Desktop: garantiert größer als Laptop */
+@media (min-width: 1200px){
+  .hero__title{
+    font-size: clamp(5.2rem, 7.2vw, 10.5rem);
+  }
+}
+
+/* Wide Screens: noch mal größer */
+@media (min-width: 1600px){
+  .hero__title{
+    font-size: clamp(6.2rem, 8.0vw, 12.5rem);
+  }
+}
+
+.villa__copy p {
+  max-width: 62ch;        /* schmaler, hochwertiger */
+  color: #5f6f7a;         /* ruhiges Blau-Grau */
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.villa__copy {
+  max-width: 60ch;
+  color: #5f6b73;
+  font-size: 1rem;
+  line-height: 1.75;
+
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+.villa__copy p {
+  margin-bottom: 1.2em;
+}
+.villa__copy {
+  font-size: 1.05rem;
+}
+/* ===== FINAL OVERRIDES (ganz ans Ende der CSS-Datei) ===== */
+
+/* Overlay ist der Anker */
+.hero__overlay--full{
+  position: relative;
+}
+
+.hero,
+.hero--full{
+  position: relative;
+}
+
+.hero__logo{
+  position: absolute;
+  top: 0px;
+  left: 24px;
+  width: min(140px, 18vw);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 999;
+  background: none;
+  outline: none;
+}
+
+.topbar__logo{
+  margin-right: auto;   /* schiebt alles andere nach rechts */
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar__logo img{
+  height: 44px;         /* Höhe wie Book-now-Zone */
+  width: auto;
+  display: block;
+  opacity: 0.9;
+}
+.topbar a{
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #2b2b2b;
+}
+
+.topbar button{
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  background: #111;
+  color: #fff;
+  border: none;
+
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.topbar button:hover{
+  background: #000;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+  transform: translateY(-1px);
+}
+/* =========================
+   VILLA LAYOUT (isoliert & responsiv)
+   ========================= */
+
+/* Bühne begrenzen: verhindert Ultra-Wide "Auseinanderziehen" */
+#villa .container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(24px, 6vw, 120px);
+  padding-right: clamp(24px, 4vw, 80px);
+}
+
+#villa .villa__grid{
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) minmax(320px, 0.8fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
+/* Text bleibt angenehm lesbar */
+#villa .villa__text{
+  max-width: 760px;
+}
+
+/* Bild: mittiger + tiefer, aber ohne "harte" 300px */
+#villa .villa__image{
+  justify-self: center;                  /* nicht am rechten Rand kleben */
+  margin-top: 320px;   /* ← DAS ist der Abstand nach unten */
+}
+
+#villa .villa__image img{
+  width: 100%;
+  max-width: clamp(520px, 32vw, 720px);  /* wächst auf großen Screens */
+  height: auto;
+  border-radius: 22px;
+  display: block;
+}
+
+/* Mobile: untereinander */
+@media (max-width: 980px){
+  #villa .container{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  #villa .villa__grid{
+    grid-template-columns: 1fr;
+  }
+
+  #villa .villa__image{
+    justify-self: start;
+    padding-top: 24px;
+  }
+
+  #villa .villa__image img{
+    max-width: 520px;
+  }
+}
+
+/* =========================
+   HOSTS PAGE
+   ========================= */
+
+#hosts .hosts__grid{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+#hosts .hosts__photos{
+  display: grid;
+  gap: 16px;
+}
+
+#hosts .hosts__photo{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+#hosts .hosts__photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#hosts .hosts__copy{
+  max-width: 66ch;
+}
+
+#hosts .hosts__list{
+  margin: 18px 0 22px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px){
+  #hosts .hosts__grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   HOSTS PAGE (isoliert)
+   ========================= */
+
+/* =========================
+   HOSTS – Layout stabil (auch große Screens)
+   ========================= */
+
+/* 1) Container: verhindert "auseinanderlaufen" auf großen Monitoren */
+#hosts .container{
+  max-width: 1200px;     /* <- WICHTIG */
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* 2) Grid: Text + Bilder sauber balancieren */
+#hosts .hosts__grid{
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) minmax(340px, 520px);
+  gap: 64px;
+  align-items: start;
+}
+
+/* 3) Text: Lesebreite fixen (sonst wird’s auf großen Screens komisch) */
+#hosts .hosts__text{
+  max-width: 70ch;
+}
+
+/* Optional: Fließtext etwas “stabiler” skalieren */
+#hosts .hosts__text p{
+  font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.12rem);
+  line-height: 1.7;
+}
+
+/* 4) Bilder-Spalte: nicht am Rand kleben, sauber untereinander */
+#hosts .hosts__images{
+  justify-self: end;     /* rechts innerhalb der Containerbreite */
+  display: grid;
+  gap: 18px;
+}
+
+/* Bilder: identisch “Gallery-Look” */
+#hosts .hosts__images .gitem{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  aspect-ratio: 4 / 3;
+}
+
+#hosts .hosts__images .gitem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 5) XXL Screens: Container etwas größer, aber trotzdem begrenzt */
+@media (min-width: 1400px){
+  #hosts .container{ max-width: 1320px; }
+  #hosts .hosts__grid{ gap: 80px; }
+}
+
+/* 6) Mobile: untereinander */
+@media (max-width: 980px){
+  #hosts .hosts__grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  #hosts .hosts__images{
+    justify-self: start;
+    max-width: 520px;
+  }
+}
+#hosts .hosts__images{
+  margin-top: 80px;   /* ← Wert nach Gefühl anpassen */
+}
+
+/* Hosts – Abschlusszitat */
+#hosts .hosts__quote{
+  margin-top: 48px;
+  margin-left: 64px;          /* Einrückung */
+  max-width: 640px;
+
+  font-size: 1.35rem;         /* deutlich größer */
+  line-height: 1.4;
+  font-style: italic;
+  color: #444;
+}
+
+
+.topbar__inner{
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Brand bleibt ganz links */
+.topbar__brand{
+  margin-right: auto;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Nav bleibt rechts, Home ist dort erster Punkt */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+/* ===== HOSTS: Bilder NICHT beschneiden ===== */
+#hosts .hosts__images .gitem{
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+}
+
+#hosts .hosts__images .gitem img{
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  display: block !important;
+}
+/* =========================
+   LOCATION (isoliert)
+   ========================= */
+
+#location .location__grid{
+  display: grid;
+  grid-template-columns: minmax(520px, 760px) minmax(520px, 1fr);
+  gap: 18px;                 /* Text & Karte näher zusammen */
+  align-items: start;
+  margin-top: 24px;
+}
+
+/* TEXT */
+#location .location__text{
+  max-width: 760px;
+}
+
+/* FACTS */
+#location .location__facts{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+#location .fact{
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+#location .fact__label{
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+#location .fact__value{
+  font-weight: 650;
+  color: var(--ink);
+}
+
+/* RIGHT COLUMN (Map + Photo) */
+#location .location__media{
+  width: 100%;
+  max-width: 760px;
+  justify-self: start;       /* NICHT ganz rechts kleben */
+}
+
+/* MAP */
+#location .location__map{
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+#location .location__map iframe{
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+/* PHOTO under map */
+#location .location__photo{
+  margin-top: 14px;          /* Abstand zwischen Karte & Foto */
+}
+
+#location .location__photo img{
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  #location .location__grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  #location .location__media{
+    max-width: 100%;
+  }
+
+  #location .location__map iframe{
+    height: 340px;
+  }
+
+  #location .location__facts{
+    grid-template-columns: 1fr;
+  }
+}
+/* LOCATION – Map + Routes Layout */
+/* LOCATION – media block (map + routes) */
+.location__media{
+  margin-top: 28px;
+  max-width: 520px;          /* verhindert diese “endlos breite” Optik */
+  margin-left: auto;         /* rechts “sauber” */
+}
+
+/* Map oben, schön breit, nicht schmal-hoch */
+.location__map iframe{
+  width: 100%;
+  height: 340px;             /* wichtiger Fix gegen “Handy-Map” */
+  border: 0;
+  border-radius: 22px;
+  display: block;
+}
+
+/* Zwei Skizzen nebeneinander */
+.location__routes{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.location__route{
+  margin: 0;
+}
+
+.location__route img{
+  width: 100%;
+  height: 160px;             /* gleiche Kartenhöhe */
+  object-fit: contain;       /* KEIN Abschneiden */
+  background: #f6f6f6;
+  border-radius: 18px;
+  display: block;
+  padding: 10px;
+}
+
+.location__route figcaption{
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile: alles untereinander + Map höher */
+@media (max-width: 980px){
+  .location__media{
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .location__map iframe{
+    height: 420px;
+  }
+
+  .location__routes{
+    grid-template-columns: 1fr;
+  }
+
+  .location__route img{
+    height: auto;
+  }
+}
+/* =========================
+   REVIEWS (Screenshots, komplett sichtbar)
+   ========================= */
+
+#reviews .reviews__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+#reviews .reviewcard{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+/* WICHTIG: kein crop -> kompletter Screenshot sichtbar */
+#reviews .reviewcard img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  #reviews .reviews__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  #reviews .reviews__grid{ grid-template-columns: 1fr; }
+}
+/* =========================
+   REVIEWS LIGHTBOX (Zoom in die Mitte)
+   ========================= */
+
+.reviewcard{
+  cursor: zoom-in;
+}
+
+/* Overlay */
+.rlx{
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.72);
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+}
+
+.rlx.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Inhalt */
+.rlx__inner{
+  width: min(980px, 96vw);
+  max-height: 92vh;
+  border-radius: 18px;
+  overflow: auto;                 /* <-- scroll statt abschneiden */
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+  transform: translateY(10px) scale(.96);
+  transition: transform .24s ease;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Bild wird nicht abgeschnitten, bleibt vollständig sichtbar */
+.rlx__img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Close Button */
+.rlx__close{
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 22px;
+  line-height: 44px;
+  cursor: pointer;
+}
+.rlx__close:hover{
+  background: rgba(0,0,0,0.62);
+}
+/* =========================
+   MOBILE NAV – CLEAN VERSION
+   ========================= */
+
+@media (max-width: 980px){
+
+  /* Navigation komplett ausblenden */
+  .nav{
+    display: none !important;
+  }
+
+  /* Topbar neu ausrichten */
+  .topbar__inner{
+    justify-content: space-between;
+  }
+
+  /* Burger sichtbar */
+  .burger{
+    display: block;
+  }
+
+  /* "Menü" Text statt Icon (optional clean look) */
+  .burger{
+    width: auto;
+    height: auto;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .burger span{
+    display: none; /* Linien aus */
+  }
+
+  .burger::after{
+    content: "Menü";
+  }
+
+  /* Logo kleiner */
+  .topbar__logo img{
+    height: 32px;
+  }
+}
